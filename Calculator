@@ -1,0 +1,30 @@
+a = int(input("Enter a number: "))
+b = int(input("Enter another number: "))
+mul = a // b
+print("The multiplication of the given number is : ",mul)
+
+radius = float(input("Enter Radius: "))
+area = 3.14 * radius * radius
+circumference = 2 * 3.14 * radius
+print("Area of Circle", area)
+print("Circumference", circumference)
+
+a = 10
+b = 10
+a *= b
+print(a)
+
+a=10
+b=20
+c=30
+print( (c<a))
+
+r = float(input("Enter Radius: "))
+
+a = 3.14 * r * r
+
+c = 2 * 3.14 * r
+
+print ("Area is ", a)
+
+print ("Circumference is ",c)
