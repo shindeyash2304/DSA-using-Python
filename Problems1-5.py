@@ -55,3 +55,36 @@ b = (int(input("Enter 2nd number: ")))
 a, b = b, a
 print (a)
 print (b)
+
+# #Write a program that asks the user for their name, age, and favorite color, then prints them
+
+name = input("What is you name?")
+dob = int(input("What is you Date Of Birth?"))
+age = (2025 - dob)
+
+print ("Hello!", name)
+print ("Your age is: ", age)
+
+#Write a program that asks the user for their name, age, and favorite color, then prints them.
+
+age = int(input("Enter your age: "))
+if age >= 18:
+    print ("You are an adult")
+else:
+    print("You are minor")
+
+#Take a number as input and check whether it is even or odd.
+
+num = int(input("Enter the number: "))
+if num % 2 == 0:
+    print (num, "is an even number")
+else:
+    print (num , "is an odd number")
+
+#Take marks as input and print "Pass" if marks >= 40, else print "Fail".
+marks = int(input("Enter you marks: "))
+if marks >= 40:
+    print ("Congratulations!! you are passed <3")
+else:
+    print("paisa barbad")
+
