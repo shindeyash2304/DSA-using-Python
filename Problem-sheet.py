@@ -166,3 +166,50 @@ if PW == Password :
     print("Access Granted")
 else:
     print("Acess Denied")
+
+#Take user input for name and age. Print the input values.
+# name = input("Enter you name: ")
+# age = int(input("Enter your Year of birth: "))
+
+# print ("Hello,", name)
+# print (f"Your age is: {2025 - age}")
+
+#Write a program to check if a number is positive, negative, or zero.
+# num = int(input("Enter the number: "))
+# if num > 0:
+#     print ("Positive")
+# elif num == 0:
+#     print ("Zero")
+# else:
+#     print ("Negative")
+
+#Write a program that takes the user's age and classifies them as:
+# Below 13 → Child
+# 13 to 19 → Teenager
+# 20 or above → Adult
+# year = int(input("Enter the year: "))
+# if year % 4 == 0:
+#     print (f"{year} is a leap year")
+# elif year % 100 == 0:
+#     print (f"{year} is not a leap year")
+# elif year % 400 ==0:
+#     print (f"{year} is a leap year")
+# else:
+#     print (f"{year} is not a leap year")
+
+#Write a program that checks whether a given year is a leap year.
+# year = int(input("Enter the year: "))
+# if year % 4 == 0:
+#     print (f"{year} is a leap year")
+# elif year % 100 == 0:
+#     print (f"{year} is not a leap year")
+# elif year % 400 ==0:
+#     print (f"{year} is a leap year")
+# else:
+#     print (f"{year} is not a leap year")
+
+#Print numbers from 1 to 10 using a for loop.
+# for i in range(1,101,1):
+#     print (i)
+# for i in range(2,101,2):
+#     print (i)
