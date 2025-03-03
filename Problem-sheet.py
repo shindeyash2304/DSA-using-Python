@@ -213,3 +213,94 @@ else:
 #     print (i)
 # for i in range(2,101,2):
 #     print (i)
+
+# # # # # # # # # # # # # # # print("Hello World!!")
+
+# # # # # # # # # # # # # # # num = int(input("Enter your birth year: "))
+# # # # # # # # # # # # # # # age = 2025 - num
+# # # # # # # # # # # # # # # print(f"Your age is: {age} ")
+
+# # # # # # # # # # # # # # print (type(123567890))
+
+# # # # # # # # # # # # # a = int(input("Enter 1st number: "))
+# # # # # # # # # # # # # b = int(input("Enter 2nd number: "))
+# # # # # # # # # # # # # sum = a - b
+# # # # # # # # # # # # # print(sum)
+# # # # # # # # # # # # # if sum > 0:
+# # # # # # # # # # # # #     print("Positive")
+# # # # # # # # # # # # # elif sum < 0:
+# # # # # # # # # # # # #     print("negative")
+# # # # # # # # # # # # # else:
+# # # # # # # # # # # # #     print("zero")
+
+# # # # # # # # # # # # age = int(input("Enter your age: "))
+# # # # # # # # # # # # if age < 13:
+# # # # # # # # # # # #     print("Child")
+# # # # # # # # # # # # elif age > 19:
+# # # # # # # # # # # #     print("Adult")
+# # # # # # # # # # # # else:
+# # # # # # # # # # # #     print("Teenager")
+
+# # # # # # # # # # # year = int(input("Enter year: "))
+# # # # # # # # # # # if year % 4 == 0:
+# # # # # # # # # # #     print("Leap year")
+# # # # # # # # # # # elif year % 400 == 0:
+# # # # # # # # # # #     print ("Leap year")
+# # # # # # # # # # # else:
+# # # # # # # # # # #     print("Not a leap year")
+
+# # # # # # # # # # for i in range(1,101,5):
+# # # # # # # # # #     print(i)
+
+# # # # # # # # # num = 2
+# # # # # # # # # while num < 20000:
+# # # # # # # # #     print(num)
+# # # # # # # # #     num +=100
+    
+# # # # # # # # num = int(input("Enter the number: "))
+# # # # # # # # sum = (num * (num + 1)) // 2
+# # # # # # # # print(sum)
+
+# # # # # # # import math
+# # # # # # # num = int(input("Enter a number: "))
+# # # # # # # print (math.factorial(num))
+
+# # # # # # num = int(input("Enter a number: "))
+# # # # # # factorial = 1
+# # # # # # for i in range (1,num+1):
+# # # # # #     factorial *= i
+# # # # # # print(factorial)
+
+# # # # # num = int(input("Enter a number: "))
+# # # # # a,b=0,1
+# # # # # count = 0
+# # # # # while count < num:
+# # # # #     print(a, end="")
+# # # # #     a,b = b, a+b
+# # # # #     count += 1
+
+# # # # num = int(input("Enter a number: "))
+# # # # for i in range (1,num):
+# # # #     if i == 5:
+# # # #         continue
+# # # #     if i == 1:
+# # # #         continue
+# # # #     print (i)
+
+# # # num = int(input("Enter a number: "))
+# # # for i in range(1, num):
+# # #     if i == 5:
+# # #         continue
+# # #     if i == 10:
+# # #         break
+# # #     print(i)
+
+
+# # numbers = list(map(int, input("Enter number: ").split()))
+# # print (max(numbers))
+
+# num = int(input("Enter a number: "))
+# if num > 1 and all(num % i != 0 for i in range(2, int(num ** 0.5) + 1)):  
+#     print("Prime")
+# else:
+#     print("Composite")
