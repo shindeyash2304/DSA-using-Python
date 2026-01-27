@@ -1,72 +1,68 @@
-//{ Driver Code Starts
-import java.io.*;
-import java.util.*;
-
-class GFG {
-    public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
-        int tc = sc.nextInt(); // Number of test cases
-        while (tc-- > 0) {
-            int n = sc.nextInt();
-            int m = sc.nextInt();
-            char[][] mat = new char[n][m];
-
-            // Reading the matrix
-            for (int i = 0; i < n; i++) {
-                for (int j = 0; j < m; j++) {
-                    mat[i][j] = sc.next().charAt(0);
-                }
-            }
-
-            String word = sc.next();
-            Solution obj = new Solution();
-            boolean ans = obj.isWordExist(mat, word);
-            if (ans)
-                System.out.println("true");
-            else
-                System.out.println("false");
-
-            System.out.println("~");
-        }
-        sc.close();
-    }
-}
-// } Driver Code Ends
-
 class Solution {
-    static public boolean isWordExist(char[][] mat, String word) {
-        int n = mat.length;
-        int m = mat[0].length;
-        boolean[][] visited = new boolean[n][m];
+    
+    boolean found;
+    int m;//row
+    int n;//col
+    
+    public void search(int r , int c , char[][] mat , boolean[][] visited , StringBuilder str , String word){
+        if(str.length() >= word.length()){
+            if(str.toString().equals(word)){
+                
+                found = true;
+            }
+            return;
+        }
         
-        for(int i=0; i<n; i++) {
-            for(int j=0; j<m; j++) {
-                if(mat[i][j] == word.charAt(0)) {
-                    boolean ans = findWord(mat, word, 0, visited, i, j);
-                    if(ans) return true;
+        int[][] neighbours = {{r - 1 , c},{r , c + 1 },{r + 1 , c} ,{r , c - 1}};
+        
+        for(int[] neigh : neighbours){
+            int nr = neigh[0];
+            int nc = neigh[1];
+            
+            if(nr >= 0 && nr < m && nc >= 0 && nc < n && !visited[nr][nc]){
+                str.append(mat[nr][nc]);
+                visited[nr][nc] = true;
+                search(nr , nc , mat , visited , str , word);
+                visited[nr][nc] = false;
+                str.deleteCharAt(str.length() - 1);
+            }
+        }
+        
+    }
+    public boolean isWordExist(char[][] mat, String word) {
+        // Code here
+        List<int[]> startingIndices = new ArrayList<>();
+        m = mat.length;
+        n = mat[0].length;
+        found = false;
+        
+        for(int i = 0 ; i < m ; i++){
+            for(int j = 0 ; j < n ; j++){
+                if(mat[i][j] == word.charAt(0)){
+                    startingIndices.add(new int[]{i , j});
                 }
             }
+        }
+        StringBuilder str = new StringBuilder("");
+        
+        for(int i = 0 ; i < startingIndices.size() ; i++){
+            
+            boolean[][] visited = new boolean[m][n];
+            
+            int row = startingIndices.get(i)[0];
+            int col = startingIndices.get(i)[1];
+            visited[row][col] = true;
+            str.append(mat[row][col]);
+            
+            search(row , col , mat , visited , str , word);
+            
+            if(found){
+                return true;
+            }
+            str = new StringBuilder("");
         }
         
         return false;
     }
-    
-    public static boolean findWord(char[][] mat, String word, int pos,
-        boolean[][] visited, int i, int j) {
-            
-            if(pos == word.length()) return true;
-            
-            if(i>mat.length-1 || j>mat[0].length-1 || i<0 || j<0 || word.charAt(pos) != mat[i][j] || visited[i][j]) 
-                return false;
-        
-            visited[i][j] = true;
-            
-            boolean ans = findWord(mat, word, pos+1, visited, i+1, j)
-                    || findWord(mat, word, pos+1, visited, i-1, j)
-                    || findWord(mat, word, pos+1, visited, i, j+1)
-                    || findWord(mat, word, pos+1, visited, i, j-1);
-            
-            visited[i][j] = false;
-            return ans;
-    }
 }
+
