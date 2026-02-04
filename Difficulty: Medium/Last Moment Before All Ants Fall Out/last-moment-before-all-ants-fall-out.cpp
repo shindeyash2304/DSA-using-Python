@@ -1,13 +1,17 @@
 class Solution {
   public:
     int getLastMoment(int n, vector<int>& left, vector<int>& right) {
-        int ans = 0;
-        for (int num : left) {
-            ans = max(ans, num);
+        // code here
+        int maxtime = 0;
+        
+        for(int i=0;i<left.size();i++){
+            maxtime = max(maxtime,left[i]);
         }
-        for (int num : right) {
-            ans = max(ans, n - num);
+        
+        for(int i=0;i<right.size();i++){
+            maxtime = max(maxtime,n-right[i]);
         }
-        return ans;
+        
+        return maxtime;
     }
 };
